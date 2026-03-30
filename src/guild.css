@@ -1,0 +1,153 @@
+/*
+ * Guild Page — Self-contained styles
+ * Dark, neutral palette. No external dependencies.
+ * Scoped under .guild-page to avoid conflicts with host site styles.
+ */
+
+.guild-page {
+  --guild-bg: #0b0d0f;
+  --guild-surface: #141618;
+  --guild-border: #2a2d31;
+  --guild-text: #d4d4d8;
+  --guild-text-muted: #71717a;
+  --guild-heading: #fafafa;
+  --guild-accent: #a1a1aa;
+  --guild-link: #e4e4e7;
+  --guild-link-hover: #ffffff;
+  --guild-radius: 8px;
+  --guild-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  font-family: var(--guild-font);
+  background: var(--guild-bg);
+  color: var(--guild-text);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.guild-page *,
+.guild-page *::before,
+.guild-page *::after {
+  box-sizing: border-box;
+}
+
+.guild-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+
+.guild-header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.guild-title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--guild-accent);
+  margin: 0 0 16px;
+}
+
+.guild-description {
+  font-size: 0.95rem;
+  color: var(--guild-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.guild-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--guild-border);
+  border: 1px solid var(--guild-border);
+  border-radius: var(--guild-radius);
+  overflow: hidden;
+}
+
+.guild-card {
+  background: var(--guild-surface);
+  padding: 28px 32px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background 0.15s ease;
+}
+
+.guild-card:hover {
+  background: #1a1c1f;
+}
+
+.guild-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.guild-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--guild-heading);
+  margin: 0;
+}
+
+.guild-card-domain {
+  font-size: 0.75rem;
+  color: var(--guild-text-muted);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.guild-card-tagline {
+  font-size: 0.85rem;
+  color: var(--guild-text-muted);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+.guild-card-description {
+  font-size: 0.85rem;
+  color: var(--guild-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.guild-card-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.guild-card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--guild-text-muted);
+  background: var(--guild-bg);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.guild-footer {
+  margin-top: 64px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--guild-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Responsive: two columns on wider screens */
+@media (min-width: 640px) {
+  .guild-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
