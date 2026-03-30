@@ -5,6 +5,26 @@
  * Used by JSON-LD schema generation, the /guild page, and cross-site linking.
  */
 
+/** Schema.org type for the site's primary entity */
+export type SiteSchemaType =
+  | "Organization"
+  | "ProfessionalService"
+  | "Person"
+  | "MusicGroup"
+  | "LocalBusiness"
+  | "WebSite";
+
+export interface SiteSocials {
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  facebook?: string;
+  linkedin?: string;
+  bandcamp?: string;
+  spotify?: string;
+  github?: string;
+}
+
 export interface GuildSite {
   /** Display name */
   name: string;
@@ -22,6 +42,27 @@ export interface GuildSite {
   platform: "nextjs" | "wordpress" | "squarespace";
   /** GitHub repo (if applicable) */
   repo?: string;
+
+  // --- Rich per-site schema fields ---
+
+  /** Schema.org type for the site's primary entity */
+  schemaType: SiteSchemaType;
+  /** URL to the site's logo (square, min 112x112) */
+  logo?: string;
+  /** Social profile URLs */
+  socials?: SiteSocials;
+  /** Founder or primary person name */
+  founder?: string;
+  /** Location string (e.g. "Tokyo, Japan") */
+  location?: string;
+  /** ISO 8601 founding date (e.g. "2019") */
+  foundingDate?: string;
+  /** Contact email (public-facing) */
+  email?: string;
+  /** Primary language (BCP 47, defaults to "en") */
+  language?: string;
+  /** Keywords / topics for the site */
+  keywords?: string[];
 }
 
 export const GUILD_NAME = "The Guild";
@@ -40,6 +81,11 @@ export const GUILD_SITES: GuildSite[] = [
     category: "Storytelling",
     platform: "nextjs",
     repo: "tyrannosaurusjr/japanese-jesus",
+    schemaType: "WebSite",
+    location: "Shingo Village, Aomori, Japan",
+    foundingDate: "2024",
+    language: "en",
+    keywords: ["japanese jesus", "shingo village", "ARG", "alternate reality game", "japan legend", "aomori"],
   },
   {
     name: "Wild Meat Japan",
@@ -51,6 +97,11 @@ export const GUILD_SITES: GuildSite[] = [
     category: "Food",
     platform: "nextjs",
     repo: "tyrannosaurusjr/jibier-site",
+    schemaType: "WebSite",
+    location: "Japan",
+    foundingDate: "2024",
+    language: "en",
+    keywords: ["gibier", "wild game", "venison", "boar meat", "japan hunting", "jibier"],
   },
   {
     name: "Music In Japan",
@@ -62,6 +113,14 @@ export const GUILD_SITES: GuildSite[] = [
     category: "Music",
     platform: "nextjs",
     repo: "tyrannosaurusjr/kaala-v2",
+    schemaType: "Organization",
+    location: "Tokyo, Japan",
+    foundingDate: "2024",
+    language: "en",
+    keywords: ["tokyo music", "underground music japan", "live music tokyo", "metal", "punk", "hardcore", "noise"],
+    socials: {
+      instagram: "https://www.instagram.com/musicinjapan",
+    },
   },
   {
     name: "Japan Craft Beer",
@@ -73,6 +132,11 @@ export const GUILD_SITES: GuildSite[] = [
     category: "Food & Drink",
     platform: "nextjs",
     repo: "tyrannosaurusjr/japan-craft-beer",
+    schemaType: "WebSite",
+    location: "Japan",
+    foundingDate: "2024",
+    language: "en",
+    keywords: ["japan craft beer", "japanese brewery", "craft brewing japan", "brewery directory"],
   },
   {
     name: "MKULTRAMAN",
@@ -83,6 +147,14 @@ export const GUILD_SITES: GuildSite[] = [
       "Creative consultancy specializing in audacious brand building through minimalist design and unconventional digital strategy. Based in Tokyo, focuses on web design, SEO optimization, and strategic consulting informed by Japan market experience.",
     category: "Strategy",
     platform: "wordpress",
+    schemaType: "ProfessionalService",
+    location: "Tokyo, Japan",
+    foundingDate: "2020",
+    language: "en",
+    keywords: ["digital strategy", "brand consulting", "web design", "SEO", "tokyo consultancy"],
+    socials: {
+      instagram: "https://www.instagram.com/mkultraman",
+    },
   },
   {
     name: "Akiyaz",
@@ -93,6 +165,10 @@ export const GUILD_SITES: GuildSite[] = [
       "Rural revitalization platform transforming vacant spaces into vibrant communities. Helps investors and expats acquire akiya (abandoned homes) with comprehensive consulting, visa guidance, and renovation support to address Japan's depopulation challenge.",
     category: "Real Estate",
     platform: "wordpress",
+    schemaType: "ProfessionalService",
+    location: "Japan",
+    language: "en",
+    keywords: ["akiya", "abandoned house japan", "rural revitalization", "japan real estate", "japan investment"],
   },
   {
     name: "Kaala Music",
@@ -103,6 +179,15 @@ export const GUILD_SITES: GuildSite[] = [
       "Direct access to Japan's underground music ecosystem through band discovery, venue mapping, and curated content. Predecessor to Music In Japan, solving the invisibility problem of Japanese underground music for international and domestic newcomers.",
     category: "Music",
     platform: "wordpress",
+    schemaType: "Organization",
+    location: "Tokyo, Japan",
+    foundingDate: "2010",
+    language: "en",
+    keywords: ["kaala", "tokyo underground", "japanese punk", "japanese metal", "live music tokyo"],
+    socials: {
+      instagram: "https://www.instagram.com/kaaboron",
+      youtube: "https://www.youtube.com/@kaaboron",
+    },
   },
   {
     name: "Heather Dobbin",
@@ -113,6 +198,10 @@ export const GUILD_SITES: GuildSite[] = [
       "Tokyo-based executive coaching focusing on sustainable leadership through somatic techniques, mindfulness, and cognitive-behavioral approaches. Specializes in burnout recovery, women's leadership, and authentic professional development for global executives.",
     category: "Coaching",
     platform: "squarespace",
+    schemaType: "Person",
+    location: "Tokyo, Japan",
+    language: "en",
+    keywords: ["executive coaching", "leadership development", "burnout recovery", "women leadership", "tokyo coach"],
   },
   {
     name: "The Delphi Network",
@@ -123,6 +212,10 @@ export const GUILD_SITES: GuildSite[] = [
       "Tokyo's premier networking platform for foreign professionals navigating Japan's business landscape. Provides curated peer networks, business intelligence, exclusive events, and relationship-building for country managers and international leaders.",
     category: "Network",
     platform: "squarespace",
+    schemaType: "Organization",
+    location: "Tokyo, Japan",
+    language: "en",
+    keywords: ["executive networking japan", "business network tokyo", "expat professionals japan"],
   },
   {
     name: "Thom Smith Art",
@@ -133,5 +226,12 @@ export const GUILD_SITES: GuildSite[] = [
       "Tokyo-based illustration and design practice specializing in album artwork, posters, and merchandise graphics. Offers commission services, risograph prints, and a portfolio spanning drawing, printmaking, and photography with underground music scene connections.",
     category: "Art",
     platform: "squarespace",
+    schemaType: "Person",
+    location: "Tokyo, Japan",
+    language: "en",
+    keywords: ["illustration", "album artwork", "risograph", "tokyo artist", "music art", "poster design"],
+    socials: {
+      instagram: "https://www.instagram.com/thomsmithart",
+    },
   },
 ];
