@@ -18,6 +18,7 @@
   "scripts": {
     "build": "npx tsx src/build.ts",
     "build:pkg": "tsc",
+    "prepare": "npm run build:pkg",
     "prepublishOnly": "npm run build:pkg"
   },
   "devDependencies": {
