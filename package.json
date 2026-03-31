@@ -1,10 +1,26 @@
 {
-  "name": "guild",
+  "name": "@mkultraman/guild",
   "version": "1.0.0",
-  "private": true,
-  "description": "Shared schema, guild page, and cross-site linking for all guild sites.",
+  "description": "Shared config and schema generator for the guild network.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib/",
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "npx tsx src/build.ts"
+    "build": "npx tsx src/build.ts",
+    "build:pkg": "tsc",
+    "prepublishOnly": "npm run build:pkg"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
