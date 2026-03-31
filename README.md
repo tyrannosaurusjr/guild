@@ -31,19 +31,30 @@ npm run build
 
 ### Next.js sites (japanesejesus.com, wildmeatjapan.com, musicinjapan.com, japancraftbeer.com)
 
+**Install the package:**
+
+```bash
+npm install github:tyrannosaurusjr/guild
+```
+
+To pull the latest config after changes:
+
+```bash
+npm update @mkultraman/guild
+```
+
 **Guild page:**
 
-1. Copy `src/guild-config.ts`, `src/guild-schema.ts`, and `src/guild.css` into your project's `src/lib/` or similar
-2. Copy `nextjs/guild-page.tsx` to `app/guild/page.tsx`
-3. Update `CURRENT_DOMAIN` in the page file to match your site
-4. Update imports to point to where you placed the config/schema files
+1. Copy `nextjs/guild-page.tsx` to `app/guild/page.tsx`
+2. Update `CURRENT_DOMAIN` in the page file to match your site
+3. Copy `src/guild.css` to wherever the page imports it from
 
 **JSON-LD schema in `<head>`:**
 
 In your root `layout.tsx`:
 
 ```tsx
-import { generateGuildSchema } from "@/lib/guild-schema";
+import { generateGuildSchema } from "@mkultraman/guild";
 
 // In the <head> of your layout:
 <script

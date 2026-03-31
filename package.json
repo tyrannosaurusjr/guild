@@ -2,6 +2,7 @@
   "name": "@mkultraman/guild",
   "version": "1.0.0",
   "description": "Shared config and schema generator for the guild network.",
+  "private": true,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
@@ -14,9 +15,6 @@
     "lib/",
     "dist/"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "npx tsx src/build.ts",
     "build:pkg": "tsc",
