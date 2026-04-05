@@ -11,7 +11,14 @@
       "require": "./lib/index.js",
       "default": "./lib/index.js",
       "types": "./lib/index.d.ts"
-    }
+    },
+    "./page": {
+      "import": "./lib/guild-page.js",
+      "require": "./lib/guild-page.js",
+      "default": "./lib/guild-page.js",
+      "types": "./lib/guild-page.d.ts"
+    },
+    "./guild.css": "./src/guild.css"
   },
   "files": [
     "lib/",
@@ -24,7 +31,17 @@
     "prepare": "npm run build:pkg",
     "prepublishOnly": "npm run build:pkg"
   },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0"
   }

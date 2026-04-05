@@ -171,25 +171,6 @@ export const GUILD_SITES: GuildSite[] = [
     keywords: ["akiya", "abandoned house japan", "rural revitalization", "japan real estate", "japan investment"],
   },
   {
-    name: "Kaala Music",
-    domain: "kaalamusic.com",
-    url: "https://kaalamusic.com",
-    tagline: "Japan's underground music scene finder.",
-    description:
-      "Direct access to Japan's underground music ecosystem through band discovery, venue mapping, and curated content. Predecessor to Music In Japan, solving the invisibility problem of Japanese underground music for international and domestic newcomers.",
-    category: "Music",
-    platform: "wordpress",
-    schemaType: "Organization",
-    location: "Tokyo, Japan",
-    foundingDate: "2010",
-    language: "en",
-    keywords: ["kaala", "tokyo underground", "japanese punk", "japanese metal", "live music tokyo"],
-    socials: {
-      instagram: "https://www.instagram.com/kaaboron",
-      youtube: "https://www.youtube.com/@kaaboron",
-    },
-  },
-  {
     name: "Heather Dobbin",
     domain: "heatherdobbin.com",
     url: "https://heatherdobbin.com",
