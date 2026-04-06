@@ -20,3 +20,18 @@ export {
   generateGuildSchema,
   generateGuildSchemaScript,
 } from "./guild-schema";
+
+export {
+  CONTENT_MATRIX,
+  type ContentPiece,
+} from "./content-matrix";
+
+export {
+  generateBrief,
+  getBriefsForPublisher,
+  getBriefsAbout,
+  getBriefsByStatus,
+  getContentStats,
+  briefToMarkdown,
+  type ContentBrief,
+} from "./content-brief";
