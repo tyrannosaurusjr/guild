@@ -112,7 +112,7 @@ export const GUILD_SITES: GuildSite[] = [
       "Born from 15 years of scene experience, tracks 400+ monthly shows across 22 underground venues. Offers curated picks, advance ticket access, and tour booking for Tokyo's metal, punk, hardcore, and noise scenes.",
     category: "Music",
     platform: "nextjs",
-    repo: "tyrannosaurusjr/kaala-v2",
+    repo: "tyrannosaurusjr/music-in-japan",
     schemaType: "Organization",
     location: "Tokyo, Japan",
     foundingDate: "2024",
